@@ -31,7 +31,7 @@ try:
       print("current location: '%s'" % g.latlng)
       lat = g.lat
       lng = g.lng
-      ws.send(r'{"command": "message","identifier": "{\"channel\": \"HelpButtonChannel\"}", "data":"{\"action\": \"sendToHelper\", \"status\":\"SUCCESS\", \"message\":\"Sent a help message from Help button\", \"uid\":\"%s\", \"lat\":\"%f\", \"lng\":\"%f\"}"}' % (UID, lat, lng))
+      ws.send(r'{"command": "message","identifier": "{\"channel\": \"HelpButtonChannel\"}", "data":"{\"action\": \"sendToHelper\", \"message\":{ \"status\":\"SUCCESS\", \"message\":\"Sent a help message from Help button\", \"clientUid\":\"%s\", \"lat\":\"%f\", \"lng\":\"%f\", \"is_helper\":\"false\"}}"}' % (UID, lat, lng))
       print("Sent")
     else:
       print(".")
